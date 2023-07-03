@@ -1,0 +1,277 @@
+:root {
+  --primary-text: #e9edef;
+  --secondary-text: #9e9e9e;
+  --personal: var(--primary);
+  --light: #eee;
+  --grey: #888;
+  --dark: #313154;
+  --text-color: #fff;
+  --background-color: #111b21;
+  --panel-bg-color: #202c33;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-text);
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.inner_main {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_section {
+  flex-basis: 400px;
+  border-right: 1px solid #4e4e4e;
+}
+
+.message_section {
+  flex: 1;
+}
+
+.no_contact_selected {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  height: 60px;
+  background-color: var(--panel-bg-color);
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message_header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile img {
+  width: 100%;
+}
+
+.contact_display {
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.contact_display::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contact_display::-webkit-scrollbar-track {
+  border-radius: px;
+  background: #c9cacc;
+}
+
+.contact_display::-webkit-scrollbar-track:hover {
+  background: #78797a;
+}
+
+.contact_display::-webkit-scrollbar-thumb {
+  background: #3d5585;
+  border-radius: 10px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+  background: #01143b;
+}
+
+.contact_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-bottom: 1px solid #4c4c4c;
+}
+
+.contact_card:hover {
+  background-color: #2a3942;
+}
+
+.card_info {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.display_name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.last_message {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-text);
+}
+
+.contact_card .time {
+  align-self: flex-start;
+  color: var(--secondary-text);
+}
+
+.contact_card .time span {
+  font-style: 14px;
+  color: var(--secondary-text);
+}
+
+.message_display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.message_container {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.message_form {
+  background-color: var(--panel-bg-color);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: sticky;
+  bottom: 0;
+}
+
+.message_form form {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.message_form form input {
+  width: 100%;
+  display: inline-block;
+  height: 40px;
+  background-color: #2a3942;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  color: white;
+}
+
+.message {
+  max-width: 70%;
+  background-color: var(--panel-bg-color);
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.message.self {
+  margin-left: auto;
+  background-color: #005c4b;
+}
+
+.message.other {
+  margin-right: auto;
+}
+
+.message .text {
+  font-size: 14px;
+}
+
+.message .time {
+  font-size: 10px;
+  margin-top: 5px;
+  color: #ddd;
+  text-align: right;
+}
+
+.modal_popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  background-color: #ddd;
+  color: black;
+  max-width: 400px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  box-shadow: 0px 0px 20px 6px #005c4b;
+}
+
+.modal_popup .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #005c4b;
+  padding: 15px 0;
+}
+
+.modal_popup .header button {
+  cursor: pointer;
+}
+
+.modal_popup .header p {
+  font-weight: bold;
+  font-size: 18px;
+}
+.modal_popup .body form {
+  width: 100%;
+}
+.modal_popup .body form input {
+  width: 100%;
+  outline: none;
+  padding: 8px;
+}
+
+.modal_popup .body form input[type="submit"] {
+  background-color: blue;
+  cursor: pointer;
+  color: white;
+}
+
+.modal_popup .body form label {
+  font-weight: bold;
+}
+
+.modal_popup .body .form_item {
+  margin: 10px 0;
+}
